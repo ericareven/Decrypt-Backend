@@ -5,14 +5,19 @@ const express = require('express')
 
 const app = express();
 const routes = require('./routes/index')
+const cors = require('cors');
+
+const routes = require('./routes/index')
+const users = require('./routes/users')
 
 // MiddleWare
 app.use(cors()); // to prevent cors errors, open access to all origins
 app.use(express.urlencoded({extended: true}))
 app.use(express.json()); // parse json bodies
 
+// app.use("/routes/users", users);
 
-app.use('/', routes)
+app.use('/', routes);
 
 //catch all 404 route! 
 app.use((req, res) => {res.status(404).json({message: "NOT A PROPER ROUTE"})})
