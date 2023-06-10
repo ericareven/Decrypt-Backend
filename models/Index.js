@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
-const {DATABASE_URL} = process.env
-// const {MONGODB_URI} = process.env
+// const {DATABASE_URL} = process.env
+const {MONGODB_URI} = process.env
 
 // mongoose.connect(MONGODB_URI);
-mongoose.connect(DATABASE_URL, {
+mongoose.connect(MONGODB_URI, {
     useUnifiedTopology: true,
     useNewUrlParser: true,
   });
@@ -13,5 +13,6 @@ mongoose.connection
   .on('error', (error) => console.log(error));
 
   module.exports = {
-    Post: require('./Post')
+    Post: require('./Post'),
+    User: require('./User')
 }
