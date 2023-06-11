@@ -1,4 +1,5 @@
-const db = require('../models/Index') //this is where our db mongoose connection lives as well as our models
+const db = require('../models/Index') 
+
 
 // Index
 const getPost = (req, res) => {
