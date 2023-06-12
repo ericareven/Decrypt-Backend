@@ -7,7 +7,7 @@ const app = express();
 const cors = require('cors');
 const bodyParser = require("body-parser");
 
-const post = require('./routes/index')
+const post = require('./routes/posts')
 const user = require('./routes/user')
 // const auth = require('./routes/auth')
 
@@ -29,7 +29,7 @@ app.use(express.json());
 
 
 // Routes
-app.use('/api/', post); 
+app.use('/', post); 
 app.use("/user", user);
 // app.use("/auth", auth);
 
