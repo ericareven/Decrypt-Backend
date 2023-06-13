@@ -26,7 +26,7 @@ const createPost = (req, res) => {
 }
 
 // Update
-const updatePost = (req, res) => {
+const editPost = (req, res) => {
     db.Post.findByIdAndUpdate(req.params.id, req.body, {new: true})
     .then((updatedPost) => {
         if(!updatedPost){
@@ -52,6 +52,6 @@ const deletePost = (req, res) => {
 module.exports = {
     getPost,
     createPost,
-    updatePost,
+    editPost,
     deletePost
 }

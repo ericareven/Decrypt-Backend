@@ -5,8 +5,8 @@ const { postCtrl } = require('../controllers')
 // const { protect } = require('../middleware/auth')
 
 router.get('/', postCtrl.getPost)
-router.post('/:id', postCtrl.createPost)
-router.put('/:id', postCtrl.updatePost)
+router.post('/', postCtrl.createPost)
+router.put('/:id', postCtrl.editPost)
 router.delete('/:id', postCtrl.deletePost)
 
 module.exports = router;
